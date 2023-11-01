@@ -1,13 +1,15 @@
-import {useState} from 'react';
-import { useDispatch } from "react-redux"
+import { useState } from 'react';
+import { useDispatch, useSelector } from "react-redux"
 import { addImg, resetImg } from '@store/actions'
 import SuperGif from '@utils/libgif';
 import './index.less';
 
 const Upload = () => {
   const dispatch = useDispatch();
-  
-  const [loading,setLoading] = useState(0)
+  const { imgs } = useSelector((state) => {
+    return state
+  })
+  const [loading, setLoading] = useState(0)
 
   const handleUpload = (e) => {
     if (e.target.files.length > 0) {
@@ -31,6 +33,7 @@ const Upload = () => {
               const sImg = superGif.get_canvas().toDataURL('image/png');
               dispatch(addImg(sImg))
             }
+            console.log(imgs, 'imgs')
             setLoading(0)
           });
         }
@@ -38,20 +41,20 @@ const Upload = () => {
     }
   };
 
-  return <><label
-  htmlFor="input"
-  className='gif-qrcode-content-upload'
->
-  Upload
-</label>
-<input
-  type="file"
-  id="input"
-  hidden={true}
-  accept=".gif"
-  onClick={(e) => (e.target.value = null)}
-  onChange={(e) => handleUpload(e)}
-/></>
+  return <>
+    <label
+      htmlFor="input"
+      className='gif-qrcode-content-upload'
+    >Upload</label>
+    <input
+      type="file"
+      id="input"
+      hidden={true}
+      accept=".gif"
+      onClick={(e) => (e.target.value = null)}
+      onChange={(e) => handleUpload(e)}
+    />
+  </>
 }
 
 export default Upload;
