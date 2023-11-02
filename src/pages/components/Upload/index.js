@@ -6,9 +6,7 @@ import './index.less';
 
 const Upload = () => {
   const dispatch = useDispatch();
-  const { imgs } = useSelector((state) => {
-    return state
-  })
+  const imgs = useSelector(state => state.imgs)
   const [loading, setLoading] = useState(0)
 
   const handleUpload = (e) => {

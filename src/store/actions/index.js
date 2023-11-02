@@ -1,4 +1,4 @@
-import { ADDIMG, RESETIMG } from '../types/index';
+import { ADDIMG, RESETIMG, SETPARAMETER } from '../types/index';
 
 export function addImg(imgs) {
   return {
@@ -7,7 +7,14 @@ export function addImg(imgs) {
   }
 }
 export function resetImg() {
-    return {
-      type: RESETIMG,
-    }
+  return {
+    type: RESETIMG,
   }
+}
+export function setParameter(key, value) {
+  return {
+    type: SETPARAMETER,
+    key,
+    value
+  }
+}

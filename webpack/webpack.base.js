@@ -14,7 +14,8 @@ module.exports = {
             "@components": path.resolve(__dirname, "../src/components"),
             "@utils": path.resolve(__dirname, "../src/utils"),
             "@assets": path.resolve(__dirname, "../src/assets"),
-            "@store": path.resolve(__dirname, "../src/store")
+            "@store": path.resolve(__dirname, "../src/store"),
+            "@constants": path.resolve(__dirname, "../src/constants"),
         }
     },
     module: {

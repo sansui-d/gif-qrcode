@@ -1,9 +1,12 @@
 import React from 'react';
 import './index.less';
 
-const Button = (props) => {
-
-    return <div className='gif-qrcode-button'></div>
+function Button(props) {
+    const { text, onClick, btnRef } = props
+    return (
+        <button ref={btnRef} className='gif-qrcode-button' onClick={onClick}>
+            {text}
+        </button>)
 }
 
-export default Button;
+export default Button

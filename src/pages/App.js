@@ -1,7 +1,8 @@
 import React from 'react';
 import Download from './components/Download';
-import  Upload  from './components/Upload';
-import  Parameter  from './components/Parameter';
+import Upload from './components/Upload';
+import Parameter from './components/Parameter';
+import QRContent from './components/QRContent';
 import './App.less';
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
       <Parameter />
       <div className='gif-qrcode-content'>
         <div className='gif-qrcode-content-input'><input /></div>
-        <div className='gif-qrcode-content-qr'>123</div>
+        <QRContent />
         <Upload />
         <Download />
       </div>

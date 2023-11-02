@@ -1,7 +1,23 @@
-import { ADDIMG, RESETIMG } from '../types/index'
+import { ADDIMG, RESETIMG, SETPARAMETER } from '../types/index'
+import { iconSource } from '@constants'
+import { getScale } from '@utils/helper';
 
 const rootState = {
-  imgs: []
+  imgs: [],
+  parameter: {
+    level: 'H',
+    iconType: '0',
+    icon: '',
+    iconScale: 22,
+    image: '',
+    type: 'rect',
+    size: 100,
+    opacity: 100,
+    darkColor: '#000000',
+    lightColor: '#ffffff',
+    posType: 'rect',
+    posColor: '#000000'
+  }
 }
 export default function reducers(state = rootState, actions) {
   switch (actions.type) {
@@ -10,8 +26,15 @@ export default function reducers(state = rootState, actions) {
       return { ...state, imgs: imgs }
     }
     case RESETIMG: {
-        return { ...state, imgs: [] }
-      }
+      return { ...state, imgs: [] }
+    }
+    case SETPARAMETER: {
+      const parameter = { ...state.parameter }
+      parameter[actions.key] = actions.value
+      actions.key === 'iconType' && (parameter.icon = iconSource[parameter.iconType])
+      actions.key === 'iconScale' && (parameter.iconScale = getScale(actions.value))
+      return { ...state, parameter }
+    }
     default:
       return state
   }
