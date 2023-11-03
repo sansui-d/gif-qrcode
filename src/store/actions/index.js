@@ -1,9 +1,9 @@
-import { ADDIMG, RESETIMG, SETPARAMETER } from '../types/index';
+import { ADDIMG, RESETIMG, SETPARAMETER, SETGIFURL } from '../types/index';
 
-export function addImg(imgs) {
+export function addImg(img) {
   return {
     type: ADDIMG,
-    imgs
+    img
   }
 }
 export function resetImg() {
@@ -16,5 +16,11 @@ export function setParameter(key, value) {
     type: SETPARAMETER,
     key,
     value
+  }
+}
+export function setGifUrl(url) {
+  return {
+    type: SETGIFURL,
+    url
   }
 }
