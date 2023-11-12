@@ -132,11 +132,11 @@ const Upload = () => {
               superGif.move_to(i)
               const sImg = superGif.get_canvas().toDataURL('image/png');
               dispatch(addImg(sImg))
-              // console.log(sImg, 'sImg')
+              console.log(sImg, 'sImg')
             }
             console.log(imgs, 'imgs')
             setLoading(0)
-            makeQRCode()
+            // makeQRCode()
           });
         }
       };
@@ -146,6 +146,10 @@ const Upload = () => {
   useEffect(()=>{
     initGif()
   },[])
+
+  useEffect(()=>{
+    makeQRCode()
+  },[imgs])
 
   return <>
     <label
