@@ -1,20 +1,32 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Download from './components/Download';
-import Upload from './components/Upload';
+import UploadGif from './components/UploadGif';
 import Parameter from './components/Parameter';
 import QRContent from './components/QRContent';
+import Build from './components/Build'
 import './App.less';
 
 function App() {
+  const uploadRef = useRef(null);
 
   return (
     <div className="gif-qrcode">
       <Parameter />
       <div className='gif-qrcode-content'>
-        <div className='gif-qrcode-content-input'><input /></div>
-        <QRContent />
-        <Upload />
-        <Download />
+        <div className='gif-qrcode-content-top'>
+          <div className='gif-qrcode-content-top-left'>
+            <QRContent />
+          </div>
+          <div className='gif-qrcode-content-top-right'>
+            <UploadGif />
+          </div>
+        </div>
+        <div className='gif-qrcode-content-input'>
+          <Build />
+        </div>
+        <div className='gif-qrcode-content-bottom'>
+          <Download />
+        </div>
       </div>
     </div>
   );

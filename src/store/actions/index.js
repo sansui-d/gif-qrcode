@@ -1,4 +1,4 @@
-import { ADDIMG, RESETIMG, SETPARAMETER, SETGIFURL } from '../types/index';
+import { ADDIMG, RESETIMG, SETPARAMETER, SETGIFURL, SETGIFNAME, SETLOADING, SETQR } from '../types/index';
 
 export function addImg(img) {
   return {
@@ -22,5 +22,17 @@ export function setGifUrl(url) {
   return {
     type: SETGIFURL,
     url
+  }
+}
+export function setGifName(name) {
+  return {
+    type: SETGIFNAME,
+    name
+  }
+}
+export function setLoading(loading) {
+  return {
+    type: SETLOADING,
+    loading
   }
 }

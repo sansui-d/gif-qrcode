@@ -1,4 +1,4 @@
-import { ADDIMG, RESETIMG, SETPARAMETER, SETGIFURL } from '../types/index'
+import { ADDIMG, RESETIMG, SETPARAMETER, SETGIFURL, SETGIFNAME, SETLOADING, SETQR } from '../types/index'
 import { iconSource } from '@constants'
 import { getScale } from '@utils/helper';
 
@@ -18,7 +18,9 @@ const rootState = {
     posType: 'rect',
     posColor: '#000000'
   },
-  gifUrl: ''
+  gifUrl: '',
+  gifName: 'gif',
+  loading: 0, // 0: done, 1: gif split, 2: gif merge
 }
 export default function reducers(state = rootState, actions) {
   switch (actions.type) {
@@ -38,6 +40,12 @@ export default function reducers(state = rootState, actions) {
     }
     case SETGIFURL: {
       return { ...state, gifUrl: actions.url }
+    }
+    case SETGIFNAME: {
+      return { ...state, gifName: actions.name }
+    }
+    case SETLOADING: {
+      return { ...state, loading: actions.loading }
     }
     default:
       return state
