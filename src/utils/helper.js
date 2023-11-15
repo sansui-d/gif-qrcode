@@ -26,14 +26,17 @@ export function isPicture(file) {
 }
 
 export const getScale = (iconScale) => {
+    if (!iconScale || iconScale === '0') {
+        return '0.33'
+    }
     if (iconScale > 33 || iconScale < 0) {
         return '0.33'
     }
     if (iconScale > 0 && iconScale < 1) {
-        return '0.01'
+        return '0.1'
     }
     if (iconScale >= 1 && iconScale < 10) {
-        return '0.0' + Math.round(iconScale)
+        return '0.1'
     }
     return '0.' + Math.round(iconScale)
 }
