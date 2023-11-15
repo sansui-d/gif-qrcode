@@ -28,8 +28,9 @@ module.exports = {
         'react'
     ],
     'rules': {
-        'no-unused-vars': 0,
+        'no-unused-vars': 1,
         'react/prop-types': 0,
-        'react/react-in-jsx-scope': 0
+        'react/react-in-jsx-scope': 0,
+        'no-undef': 0
     }
 };

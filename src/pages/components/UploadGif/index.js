@@ -12,6 +12,7 @@ import {
   setLoading,
 } from "@store/actions";
 import SuperGif from "@utils/libgif";
+import defaultGif from '@assets/default-gif.gif'
 import "./index.less";
 
 const Upload = (props) => {
@@ -20,7 +21,7 @@ const Upload = (props) => {
   const imgs = useSelector((state) => state.imgs);
   const gif = useRef(null);
   const timeout = useRef(null);
-  const [img, setImg] = useState("");
+  const [img, setImg] = useState(() => defaultGif);
 
   const handleUpload = (e) => {
     if (e.target.files.length > 0) {
@@ -55,7 +56,7 @@ const Upload = (props) => {
 
   return (
     <div className="gif-qrcode-content-upload">
-      <img className="gif-qrcode-content-upload-gif" src={img} />
+      <div className="gif-qrcode-content-upload-gif"><img src={img} /></div>
       <label htmlFor="input" className="gif-qrcode-content-upload-label">
         Upload
       </label>
