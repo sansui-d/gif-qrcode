@@ -1,5 +1,5 @@
 import jsQR from 'jsqr';
-import QRCode from "./qrcode";
+import QRCode from './qrcode';
 
 export const QRPointType = {
     DATA: 0,

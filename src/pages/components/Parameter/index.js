@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect } from 'react';
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch, useSelector } from 'react-redux'
 import { setParameter } from '@store/actions'
 import { parameterList, COMPONENT_BY_NAME } from '@constants';
 import './index.less';

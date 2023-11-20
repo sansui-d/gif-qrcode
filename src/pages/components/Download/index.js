@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch, useSelector } from 'react-redux'
 import './index.less';
 
 const Download = (props) => {
@@ -7,10 +7,10 @@ const Download = (props) => {
     const gifName = useSelector(state => state.gifName)
     const loading = useSelector(state => state.loading)
     const handleDownload = () => {
-        let a = document.createElement("a");
-        a.setAttribute("href", gifUrl);
-        a.setAttribute("target", "download");
-        a.setAttribute("download", gifName + ".gif");
+        let a = document.createElement('a');
+        a.setAttribute('href', gifUrl);
+        a.setAttribute('target', 'download');
+        a.setAttribute('download', gifName + '.gif');
         a.click();
     };
 

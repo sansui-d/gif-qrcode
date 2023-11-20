@@ -126,10 +126,10 @@ QRImage.defaultProps = {
     type: Type.Rect,
     size: 100,
     opacity: 100,
-    darkColor: "#000000",
-    lightColor: "#FFFFFF",
+    darkColor: '#000000',
+    lightColor: '#FFFFFF',
     posType: PosType.Rect,
-    posColor: "#000000"
+    posColor: '#000000'
 }
 
 export default RendererWrapper(QRImage);

@@ -26,26 +26,29 @@
             display: flex;
         }
     }
+
     &-label {
+        position: relative;
+        border: none;
+        border-radius: 9px;
+        padding: 8px;
         font-size: 16px;
         font-weight: 700;
         color: #ff7576;
-        background-color: #EBF0FF;
-        border: none;
+        background-color: #ebf0ff;
         outline: none;
+        box-shadow: 0 1px 2px #ebf0ff,
+            0 4px 16px #ebf0ff;
+        transition: transform .1s;
         cursor: pointer;
-        padding: 8px;
-        position: relative;
         line-height: 24px;
-        border-radius: 9px;
-        box-shadow: 0px 1px 2px #EBF0FF,
-          0px 4px 16px #EBF0FF;
         transform-style: preserve-3d;
         transform: scale(var(--s, 1)) perspective(600px)
-          rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+            rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
         perspective: 600px;
-        transition: transform 0.1s;
+
         &-sp {
+            display: block;
             background: linear-gradient(
                 90deg,
                 #866ee7,
@@ -53,15 +56,14 @@
                 #ed8f57,
                 #fbd41d,
                 #2cca91
-              );
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            );
             background-clip: text;
-            display: block;
+            -webkit-text-fill-color: transparent;
         }
+
         &:active {
-            transition: 0.3s;
-            transform: scale(0.93);
+            transition: .3s;
+            transform: scale(.93);
         }
     }
 }

@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from 'react';
-import { useDispatch, useSelector } from "react-redux"
-import GIF from "gif.js";
+import { useDispatch, useSelector } from 'react-redux'
+import GIF from 'gif.js';
 import domtoimage from 'dom-to-image';
-import { worker } from "@utils/gif-worker";
+import { worker } from '@utils/gif-worker';
 import { addImg, resetImg, setParameter, setGifUrl, setGifName, setLoading } from '@store/actions'
 import './index.less';
 
@@ -29,10 +29,10 @@ const Build = (props) => {
             await makeQRCodePromise()
         }
         try {
-            gif.current.on("progress", function (progress) {
+            gif.current.on('progress', function (progress) {
                 console.log(progress)
             });
-            gif.current.on("finished", function (blob) {
+            gif.current.on('finished', function (blob) {
                 const gif = URL.createObjectURL(blob);
                 dispatch(setGifUrl(gif))
                 dispatch(setLoading(0))
@@ -54,7 +54,7 @@ const Build = (props) => {
     }
 
     const imgRender = () => {
-        const svg = document.getElementById("gif-qrcode-content-sketch");
+        const svg = document.getElementById('gif-qrcode-content-sketch');
         domtoimage.toSvg(svg, { bgcolor: '#fff' })
             .then(function (dataUrl) {
                 let img = document.createElement('img');

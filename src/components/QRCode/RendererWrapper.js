@@ -1,5 +1,5 @@
 import React from 'react';
-import { encodeData } from "@utils/qrcodeHandler";
+import { encodeData } from '@utils/qrcodeHandler';
 
 export const RendererWrapper = (renderer) => {
     const Renderer = (props) => {
@@ -20,12 +20,12 @@ export function drawIcon({ qrcode, title, titleSize, titleColor, titleAlign, ico
     if (!title && !icon) return null;
     const nCount = qrcode.getModuleCount();
     const { fontSize, color, verticalAlign, ...titleStyle } = styles.title || {};
-    const titleVerticalAlign = titleAlign || verticalAlign || (icon ? "bottom" : "middle");
+    const titleVerticalAlign = titleAlign || verticalAlign || (icon ? 'bottom' : 'middle');
     iconScale = iconScale > .33 ? .33 : iconScale;
     const iconSize = Number(nCount * iconScale);
     const iconXY = (nCount - iconSize) / 2;
     const pointList = [];
-    if (icon || titleVerticalAlign === "middle") {
+    if (icon || titleVerticalAlign === 'middle') {
         pointList.push(<rect key={1} width={iconSize} height={iconSize} rx="2" ry="2" fill="#FFFFFF" x={iconXY} y={iconXY} />);
     }
 
@@ -34,11 +34,11 @@ export function drawIcon({ qrcode, title, titleSize, titleColor, titleAlign, ico
     }
 
     if (title) {
-        const svgWidth = styles.svg && styles.svg.width ? styles.svg.width.replace("px", "") : 300;
+        const svgWidth = styles.svg && styles.svg.width ? styles.svg.width.replace('px', '') : 300;
         const titleFontSize = Number(nCount + nCount / 5 * 2) * (titleSize || fontSize || 12) / svgWidth;
-        const titleFontColor = titleColor || color || "#000000";
+        const titleFontColor = titleColor || color || '#000000';
 
-        const fontY = titleVerticalAlign === "middle"
+        const fontY = titleVerticalAlign === 'middle'
             ? (icon ? (iconXY + iconSize) : (nCount / 2 + titleFontSize * .5))
             : Number(nCount + nCount / 5) - titleFontSize * .5;
 

@@ -1,8 +1,8 @@
-import { useEffect, useImperativeHandle, useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import GIF from "gif.js";
-import domtoimage from "dom-to-image";
-import { worker } from "@utils/gif-worker";
+import { useEffect, useImperativeHandle, useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import GIF from 'gif.js';
+import domtoimage from 'dom-to-image';
+import { worker } from '@utils/gif-worker';
 import {
     addImg,
     resetImg,
@@ -10,10 +10,10 @@ import {
     setGifUrl,
     setGifName,
     setLoading
-} from "@store/actions";
-import SuperGif from "@utils/libgif";
+} from '@store/actions';
+import SuperGif from '@utils/libgif';
 import defaultGif from '@assets/default-gif.gif'
-import "./index.less";
+import './index.less';
 
 const Upload = (props) => {
     const { uploadRef } = props;
@@ -31,7 +31,7 @@ const Upload = (props) => {
             reader.readAsDataURL(file);
             reader.onload = function (e) {
                 setImg(e.target.result);
-                const docImg = document.createElement("img");
+                const docImg = document.createElement('img');
                 docImg.src = e.target.result;
                 docImg.onload = function () {
                     dispatch(setLoading(1));
@@ -44,7 +44,7 @@ const Upload = (props) => {
                         dispatch(resetImg());
                         for (let i = 0; i < superGif.get_length(); i++) {
                             superGif.move_to(i);
-                            const sImg = superGif.get_canvas().toDataURL("image/png");
+                            const sImg = superGif.get_canvas().toDataURL('image/png');
                             dispatch(addImg(sImg));
                         }
                         console.log(123);

@@ -1,38 +1,36 @@
 .gif-qrcode-button {
-    padding: 8px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
     border: unset;
     border-radius: 15px;
-    color: #212121;
-    z-index: 1;
-    background: #fff;
-    position: relative;
-    font-weight: 1000;
+    padding: 8px;
     font-size: 17px;
-    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
-    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    font-weight: 1000;
+    color: #212121;
+    background: #fff;
+    box-shadow: 4px 8px 19px -3px rgb(0 0 0 / 27%);
     transition: all 250ms;
-    overflow: hidden;
-   }
+}
    
-   .gif-qrcode-button::before {
-    content: "";
+.gif-qrcode-button::before {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 0;
-    border-radius: 15px;
-    background-color: #212121;
     z-index: -1;
-    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
-    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
-    transition: all 250ms
-   }
+    border-radius: 15px;
+    width: 0;
+    height: 100%;
+    background-color: #212121;
+    box-shadow: 4px 8px 19px -3px rgb(0 0 0 / 27%);
+    transition: all 250ms;
+    content: ""
+}
    
-   .gif-qrcode-button:hover {
+.gif-qrcode-button:hover {
     color: #fff;
-   }
+}
    
-   .gif-qrcode-button:hover::before {
+.gif-qrcode-button:hover::before {
     width: 100%;
-   }
+}

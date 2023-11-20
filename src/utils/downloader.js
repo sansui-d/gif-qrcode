@@ -1,13 +1,13 @@
-const svgHead = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n " +
-    "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 20010904//EN\" \"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd\">\n"
+const svgHead = '<?xml version="1.0" encoding="utf-8"?>\n ' +
+    '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">\n'
 
-const MIME = { "jpg": "image/jpeg", "png": "image/png" };
+const MIME = { 'jpg': 'image/jpeg', 'png': 'image/png' };
 
 export function saveSvg(value, content) {
     let htmlContent = [svgHead + content]
-    let bl = new Blob(htmlContent, { type: "image/svg+xml" })
-    let a = document.createElement("a")
-    let filename = "qrcode" + ".svg"
+    let bl = new Blob(htmlContent, { type: 'image/svg+xml' })
+    let a = document.createElement('a')
+    let filename = 'qrcode' + '.svg'
 
     a.href = URL.createObjectURL(bl)
     a.download = filename
@@ -16,10 +16,10 @@ export function saveSvg(value, content) {
 }
 
 export function saveImg(value, content, width, height, type) {
-    if (!MIME[type]) throw "Error image type";
+    if (!MIME[type]) throw 'Error image type';
 
     // Finish creating downloadable data
-    let filename = "qrcode" + "." + type;
+    let filename = 'qrcode' + '.' + type;
     const wrap = document.createElement('div');
     wrap.innerHTML = content;
 

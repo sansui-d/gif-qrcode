@@ -1,31 +1,31 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import domtoimage from "dom-to-image";
-import { getScale } from "@utils/helper";
-import QRImage from "@components/QRCode/QRImage";
-import Input from "@components/Input";
-import "./index.less";
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import domtoimage from 'dom-to-image';
+import { getScale } from '@utils/helper';
+import QRImage from '@components/QRCode/QRImage';
+import Input from '@components/Input';
+import './index.less';
 
 function QRContent(props) {
     const parameter = useSelector((state) => state.parameter);
     const gifUrl = useSelector((state) => state.gifUrl);
     const loading = useSelector((state) => state.loading);
-    const [qr, setQr] = useState("");
-    const [val, setVal] = useState("https://sansui-d.github.io/gif-qrcode");
+    const [qr, setQr] = useState('');
+    const [val, setVal] = useState('https://sansui-d.github.io/gif-qrcode');
 
     useEffect(() => {
-        const svg = document.getElementById("gif-qrcode-content-sketch");
+        const svg = document.getElementById('gif-qrcode-content-sketch');
         const cloneSvg = svg.cloneNode(true);
         cloneSvg
-            .getElementsByTagName("svg")[0]
-            .removeChild(cloneSvg.getElementsByTagName("image")[0]);
+            .getElementsByTagName('svg')[0]
+            .removeChild(cloneSvg.getElementsByTagName('image')[0]);
         domtoimage
-            .toSvg(cloneSvg, { bgcolor: "#fff" })
+            .toSvg(cloneSvg, { bgcolor: '#fff' })
             .then(function (dataUrl) {
                 setQr(dataUrl);
             })
             .catch(function (error) {
-                console.error("oops, something went wrong!", error);
+                console.error('oops, something went wrong!', error);
             });
     }, [parameter, val]);
 

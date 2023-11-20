@@ -583,18 +583,6 @@ function libgif() {
                         mid = left + (pos / length) * (options.vp_w / get_canvas_scale());
                         width = canvas.width / get_canvas_scale();
                     }
-                    //some debugging, draw rect around viewport
-                    if (false) {
-                        if (!ctx_scaled) {
-                            var l = options.vp_l, t = options.vp_t;
-                            var w = options.vp_w, h = options.vp_h;
-                        } else {
-                            var l = options.vp_l / get_canvas_scale(), t = options.vp_t / get_canvas_scale();
-                            var w = options.vp_w / get_canvas_scale(), h = options.vp_h / get_canvas_scale();
-                        }
-                        ctx.rect(l, t, w, h);
-                        ctx.stroke();
-                    }
                 } else {
                     top = (canvas.height - height) / (ctx_scaled ? get_canvas_scale() : 1);
                     mid = ((pos / length) * canvas.width) / (ctx_scaled ? get_canvas_scale() : 1);
@@ -813,8 +801,8 @@ function libgif() {
 
                 offset = frameOffsets[i];
 
-                tmpCanvas.getContext("2d").putImageData(frames[i].data, offset.x, offset.y);
-                ctx.globalCompositeOperation = "copy";
+                tmpCanvas.getContext('2d').putImageData(frames[i].data, offset.x, offset.y);
+                ctx.globalCompositeOperation = 'copy';
                 ctx.drawImage(tmpCanvas, 0, 0);
                 if (typeof onChangeListener === 'function')
                     onChangeListener(i);
@@ -987,15 +975,11 @@ function libgif() {
 
                 if ('overrideMimeType' in h) {
                     h.overrideMimeType('text/plain; charset=x-user-defined');
-                }
-
-                // old browsers (XMLHttpRequest-compliant)
-                else if ('responseType' in h) {
+                } else if ('responseType' in h) {
+                    // old browsers (XMLHttpRequest-compliant)
                     h.responseType = 'arraybuffer';
-                }
-
-                // IE9 (Microsoft.XMLHTTP-compliant)
-                else {
+                } else {
+                    // IE9 (Microsoft.XMLHTTP-compliant)
                     h.setRequestHeader('Accept-Charset', 'x-user-defined');
                 }
 
