@@ -12,7 +12,7 @@ export const iconSource = {
     '2': vxSmall,
     '3': vx,
     '4': vxPay,
-    '5': alipay,
+    '5': alipay
 }
 export const levelOption = [
     { value: 'L', text: '7%', key: 'level0' },
@@ -26,26 +26,26 @@ export const iconTypeOption = [
     { value: '2', text: 'WeChat-Small', key: 'icon2' },
     { value: '3', text: 'WeChat', key: 'icon3' },
     { value: '4', text: 'WeChat-Pay', key: 'icon4' },
-    { value: '5', text: 'Ali-Pay', key: 'icon5' },
+    { value: '5', text: 'Ali-Pay', key: 'icon5' }
 ]
 export const typeOption = [
     { value: 'rect', text: 'Rectangle', key: 'type0' },
-    { value: 'round', text: 'Round', key: 'type1' },
+    { value: 'round', text: 'Round', key: 'type1' }
 ]
 export const posTypeOption = [
     { value: 'rect', text: 'Rectangle', key: 'posType0' },
     { value: 'round', text: 'Round', key: 'posType1' },
-    { value: 'planet', text: 'Star', key: 'posType2' },
+    { value: 'planet', text: 'Star', key: 'posType2' }
 ]
 export const parameterList = [
     {
         label: 'Fix Rate', props: {
-            value: 'level', options: levelOption,
+            value: 'level', options: levelOption
         }
     },
     {
         label: 'Icon Type', props: {
-            value: 'iconType', options: iconTypeOption,
+            value: 'iconType', options: iconTypeOption
         }
     },
     {
@@ -55,7 +55,7 @@ export const parameterList = [
     },
     {
         label: 'Icon Zoom', props: {
-            value: 'iconScale', type: 'number',
+            value: 'iconScale', type: 'number'
         }
     },
     {
@@ -65,39 +65,39 @@ export const parameterList = [
     },
     {
         label: 'Information Style', props: {
-            value: 'type', options: typeOption,
+            value: 'type', options: typeOption
         }
     },
     {
         label: 'Information Zoom', props: {
-            value: 'size', type: 'number',
+            value: 'size', type: 'number'
         }
     },
     {
         label: 'Information Opactiy', props: {
-            value: 'opacity', type: 'number',
+            value: 'opacity', type: 'number'
         }
     },
     {
         label: 'Information Dark', props: {
-            value: 'darkColor',
+            value: 'darkColor'
         }
     },
     {
         label: 'Information Light', props: {
-            value: 'lightColor',
+            value: 'lightColor'
         }
     },
     {
         label: 'Anchor Style', props: {
-            value: 'posType', options: posTypeOption,
+            value: 'posType', options: posTypeOption
         }
     },
     {
         label: 'Anchor Color', props: {
-            value: 'posColor',
+            value: 'posColor'
         }
-    },
+    }
 ]
 export const COMPONENT_BY_NAME = {
     'Fix Rate': Select,
@@ -111,5 +111,5 @@ export const COMPONENT_BY_NAME = {
     'Information Dark': ColorPicker,
     'Information Light': ColorPicker,
     'Anchor Style': Select,
-    'Anchor Color': ColorPicker,
+    'Anchor Color': ColorPicker
 }

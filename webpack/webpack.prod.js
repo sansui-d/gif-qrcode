@@ -10,13 +10,13 @@ const TerserWebpackPlugin = require("terser-webpack-plugin");
 module.exports = merge(common, {
     mode: "production",
     output: {
-        filename: "js/[name]-bundle-[hash:6].js",
+        filename: "js/[name]-bundle-[hash:6].js"
     },
     module: {
         rules: [
             {
                 test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+                use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"]
             },
             {
                 test: /\.less$/,
@@ -24,8 +24,8 @@ module.exports = merge(common, {
                     MiniCssExtractPlugin.loader,
                     "css-loader",
                     "postcss-loader",
-                    "less-loader",
-                ],
+                    "less-loader"
+                ]
             },
             {
                 test: /\.(sass|scss)$/,
@@ -33,10 +33,10 @@ module.exports = merge(common, {
                     MiniCssExtractPlugin.loader,
                     "css-loader",
                     "postcss-loader",
-                    "sass-loader",
-                ],
-            },
-        ],
+                    "sass-loader"
+                ]
+            }
+        ]
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -44,13 +44,13 @@ module.exports = merge(common, {
             filename: "index.html",
             inject: "body",
             minify: {
-                removeComments: true,
-            },
+                removeComments: true
+            }
         }),
         new MiniCssExtractPlugin({
-            filename: "style/[name].[hash:6].css",
+            filename: "style/[name].[hash:6].css"
         }),
-        new CleanWebpackPlugin(),
+        new CleanWebpackPlugin()
     ],
     optimization: {
         minimize: true,
@@ -59,10 +59,10 @@ module.exports = merge(common, {
             new TerserWebpackPlugin({
                 terserOptions: {
                     compress: {
-                        drop_console: true,
-                    },
-                },
-            }),
-        ],
-    },
+                        drop_console: true
+                    }
+                }
+            })
+        ]
+    }
 });

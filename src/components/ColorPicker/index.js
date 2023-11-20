@@ -23,6 +23,6 @@ function ColorPicker(props) {
         </div>}
         <Button btnRef={btnRef} text={value} onClick={handleClick} />
     </>;
-};
+}
 
 export default ColorPicker

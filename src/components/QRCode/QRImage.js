@@ -6,13 +6,13 @@ import img from '@assets/img.js'
 
 const Type = {
     Rect: 'rect',
-    Round: 'round',
+    Round: 'round'
 }
 
 const PosType = {
     Rect: 'rect',
     Round: 'round',
-    Planet: 'planet',
+    Planet: 'planet'
 }
 
 const QRImage = (props) => {
@@ -64,8 +64,7 @@ function listPoints({ qrcode, image, type, size, opacity, darkColor, lightColor,
                     else if (type === Type.Round)
                         pointList.push(<circle opacity={opacity} r={size / 2} key={id++} fill={lightColor} cx={x + 0.5} cy={y + 0.5} />)
                 }
-            }
-            else if (typeTable[x][y] === QRPointType.POS_CENTER) {
+            } else if (typeTable[x][y] === QRPointType.POS_CENTER) {
                 if (qrcode.isDark(x, y)) {
                     if (posType === PosType.Rect) {
                         pointList.push(<rect width={1} height={1} key={id++} fill={posColor} x={x} y={y} />);
@@ -86,8 +85,7 @@ function listPoints({ qrcode, image, type, size, opacity, darkColor, lightColor,
                     }
                 }
 
-            }
-            else if (typeTable[x][y] === QRPointType.POS_OTHER) {
+            } else if (typeTable[x][y] === QRPointType.POS_OTHER) {
                 if (qrcode.isDark(x, y)) {
                     if (posType === PosType.Rect) {
                         pointList.push(<rect width={1} height={1} key={id++} fill={posColor} x={x} y={y} />);
@@ -98,8 +96,7 @@ function listPoints({ qrcode, image, type, size, opacity, darkColor, lightColor,
                     }
                 }
 
-            }
-            else {
+            } else {
                 if (qrcode.isDark(x, y)) {
                     if (type === Type.Rect)
                         pointList.push(<rect opacity={opacity} width={size} height={size} key={id++} fill={darkColor} x={x + (1 - size) / 2} y={y + (1 - size) / 2} />)
@@ -132,7 +129,7 @@ QRImage.defaultProps = {
     darkColor: "#000000",
     lightColor: "#FFFFFF",
     posType: PosType.Rect,
-    posColor: "#000000",
+    posColor: "#000000"
 }
 
 export default RendererWrapper(QRImage);

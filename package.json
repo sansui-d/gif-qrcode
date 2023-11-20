@@ -10,6 +10,7 @@
   "scripts": {
     "start": "webpack serve --open --config ./webpack/webpack.dev.js",
     "build": "webpack --config ./webpack/webpack.prod.js",
+    "lint": "eslint . --fix",
     "style": "stylelint \"src/**/*.(less|scss|css)\" --fix"
   },
   "dependencies": {

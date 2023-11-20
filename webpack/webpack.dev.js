@@ -10,31 +10,31 @@ module.exports = merge(common, {
         host: "0.0.0.0",
         port: 8081,
         static: {
-            directory: path.join(__dirname, "dist"),
+            directory: path.join(__dirname, "dist")
         },
-        compress: true,
+        compress: true
     },
     module: {
         rules: [
             {
                 test: /\.css$/,
-                use: ["style-loader", "css-loader", "postcss-loader"],
+                use: ["style-loader", "css-loader", "postcss-loader"]
             },
             {
                 test: /\.less$/,
-                use: ["style-loader", "css-loader", "postcss-loader", "less-loader"],
+                use: ["style-loader", "css-loader", "postcss-loader", "less-loader"]
             },
             {
                 test: /\.s[ac]ss$/,
-                use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
-            },
-        ],
+                use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"]
+            }
+        ]
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: "public/index.html",
             inject: "body",
-            hash: false,
-        }),
-    ],
+            hash: false
+        })
+    ]
 });

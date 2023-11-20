@@ -211,8 +211,7 @@ function libgif() {
                 if (last !== clearCode) {
                     pushCode(code, last);
                 }
-            }
-            else {
+            } else {
                 if (code !== dict.length) throw new Error('Invalid LZW code.');
                 pushCode(last, last);
             }
@@ -531,8 +530,7 @@ function libgif() {
         var doParse = function () {
             try {
                 parseGIF(stream, handler);
-            }
-            catch (err) {
+            } catch (err) {
                 doLoadError('parse');
             }
         };
@@ -597,8 +595,7 @@ function libgif() {
                         ctx.rect(l, t, w, h);
                         ctx.stroke();
                     }
-                }
-                else {
+                } else {
                     top = (canvas.height - height) / (ctx_scaled ? get_canvas_scale() : 1);
                     mid = ((pos / length) * canvas.width) / (ctx_scaled ? get_canvas_scale() : 1);
                     width = canvas.width / (ctx_scaled ? get_canvas_scale() : 1);
@@ -843,8 +840,7 @@ function libgif() {
 
                     if (options.auto_play) {
                         step();
-                    }
-                    else {
+                    } else {
                         i = 0;
                         putFrame();
                     }
@@ -940,8 +936,7 @@ function libgif() {
             var scale;
             if (options.max_width && hdr && hdr.width > options.max_width) {
                 scale = options.max_width / hdr.width;
-            }
-            else {
+            } else {
                 scale = 1;
             }
             return scale;
@@ -1047,4 +1042,4 @@ function libgif() {
     };
 
     return SuperGif;
-};
+}

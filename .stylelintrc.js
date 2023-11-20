@@ -6,6 +6,7 @@ module.exports = {
     "stylelint-order"
   ],
   "rules": {
+    "indentation": 4,
     // 颜色指定大写
     "color-hex-case": "lower",
     // 禁止空块
