@@ -21,7 +21,7 @@ function Select(props) {
     })
     return (
         <div className='gif-qrcode-relative'>
-            <label className='gif-qrcode-label'>{labelValue}</label>
+            <label className='gif-qrcode-label'><span className='gif-qrcode-label-sp'>{labelValue}</span></label>
             <select className="gif-qrcode-select" defaultValue={value} onChange={e => handleChange(e)}>
                 {options?.map((option) => (
                     <option value={option.value} key={option.key}>{option.text}</option>

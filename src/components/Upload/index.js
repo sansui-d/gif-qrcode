@@ -18,7 +18,11 @@ function Upload(props) {
     }
     return (
         <div className="gif-qrcode-upload">
-            <label htmlFor={id} className='gif-qrcode-label'>{label}</label>
+            <label htmlFor={id} className='gif-qrcode-label'>
+                <span className='gif-qrcode-label-sp'>
+                    {label}
+                </span>
+            </label>
             <input
                 type="file"
                 id={id}

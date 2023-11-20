@@ -1,29 +1,39 @@
-import React from "react";
-import Download from "./components/Download";
-import UploadGif from "./components/UploadGif";
-import Parameter from "./components/Parameter";
-import QRContent from "./components/QRContent";
-import Build from "./components/Build";
-import "./App.less";
+import Card from '@components/Card'
+import Download from './components/Download';
+import UploadGif from './components/UploadGif';
+import Parameter from './components/Parameter';
+import QRContent from './components/QRContent';
+import Build from './components/Build';
+import './App.less';
 
 function App() {
     return (
         <div className="gif-qrcode">
-            <Parameter />
+            <div className="gif-qrcode-drawer">
+                <Card>
+                    <Parameter />
+                </Card>
+            </div>
             <div className="gif-qrcode-content">
                 <div className="gif-qrcode-content-top">
                     <div className="gif-qrcode-content-top-left">
-                        <QRContent />
+                        <Card>
+                            <QRContent />
+                        </Card>
                     </div>
                     <div className="gif-qrcode-content-top-right">
-                        <UploadGif />
+                        <Card>
+                            <UploadGif />
+                        </Card>
                     </div>
                 </div>
                 <div className="gif-qrcode-content-input">
                     <Build />
                 </div>
                 <div className="gif-qrcode-content-bottom">
-                    <Download />
+                    <Card>
+                        <Download />
+                    </Card>
                 </div>
             </div>
         </div>
