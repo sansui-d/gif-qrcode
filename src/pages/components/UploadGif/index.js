@@ -58,7 +58,7 @@ const Upload = (props) => {
         <div className="gif-qrcode-content-upload">
             <div className="gif-qrcode-content-upload-gif"><img src={img} /></div>
             <label htmlFor="input" className="gif-qrcode-content-upload-label">
-        Upload
+                Upload
             </label>
             <input
                 type="file"
