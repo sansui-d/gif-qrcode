@@ -47,7 +47,6 @@ const Upload = (props) => {
                             const sImg = superGif.get_canvas().toDataURL('image/png');
                             dispatch(addImg(sImg));
                         }
-                        console.log(123);
                     });
                 };
             };
