@@ -46,6 +46,7 @@ function QRContent(props) {
                 value={val}
                 onChange={setVal}
                 placeholder="https://sansui-d.github.io/gif-qrcode"
+                className="gif-qrcode-content-qrcontent-input"
             />
         </div>
     );

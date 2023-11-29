@@ -10,19 +10,19 @@ function App() {
     return (
         <div className="gif-qrcode">
             <div className="gif-qrcode-drawer">
-                <Card>
+                <Card title='Qr code parameters'>
                     <Parameter />
                 </Card>
             </div>
             <div className="gif-qrcode-content">
                 <div className="gif-qrcode-content-top">
                     <div className="gif-qrcode-content-top-left">
-                        <Card>
+                        <Card title='Qr code'>
                             <QRContent />
                         </Card>
                     </div>
                     <div className="gif-qrcode-content-top-right">
-                        <Card>
+                        <Card title='GIF'>
                             <UploadGif />
                         </Card>
                     </div>
@@ -31,7 +31,7 @@ function App() {
                     <Build />
                 </div>
                 <div className="gif-qrcode-content-bottom">
-                    <Card>
+                    <Card title='Qr code with gif'>
                         <Download />
                     </Card>
                 </div>

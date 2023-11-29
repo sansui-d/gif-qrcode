@@ -3,7 +3,15 @@ import './index.less';
 
 function Select(props) {
     const { value, options, onChange } = props
-    const [labelValue, setLabelValue] = useState('');
+    const [labelValue, setLabelValue] = useState(()=>{
+        let text = ''
+        options.forEach(option => {
+            if (option.value == value) {
+                text =  option.text
+            }
+        });
+        return text
+    });
     const handleChange = (e) => {
         options.forEach(option => {
             if (option.value == e.target.value) {
@@ -13,11 +21,7 @@ function Select(props) {
         onChange && onChange(e.target.value)
     }
     useEffect(() => {
-        options.forEach(option => {
-            if (option.value == value) {
-                setLabelValue(option.text)
-            }
-        });
+
     })
     return (
         <div className='gif-qrcode-relative'>

@@ -9,7 +9,6 @@ const Parameter = (props) => {
     const parameter = useSelector(state => state.parameter)
 
     return <div className='gif-qrcode-parameter'>
-        <div className='gif-qrcode-parameter-title'>Parameter</div>
         {parameterList.map(item => {
             if (((item.label === 'Icon Source' && parameter.iconType !== '1') || (item.label === 'Icon Zoom' && parameter.iconType === '0'))) return null;
             let Component = COMPONENT_BY_NAME[item.label];

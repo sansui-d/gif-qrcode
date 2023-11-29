@@ -1,38 +1,44 @@
 .gif-qrcode-card {
-    z-index: 1;
-    margin: 0 auto;
-    border-radius: 8px;
-    background-color: #f8fbfe;
+    border-radius: 20px;
+    background: #f5f5f5;
+    position: relative;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    padding: 10px;
 
-    &-tools {
-        display: flex;
-        align-items: center;
-        padding: 9px;
-    }
-       
-    &-circle {
-        padding: 0 4px;
-    }
-       
-    &-box {
-        display: inline-block;
-        align-items: center;
-        border-radius: 50%;
-        padding: 1px;
-        width: 10px;
-        height: 10px;
-    }
-       
-    &-red {
-        background-color: #ff605c;
-    }
-       
-    &-yellow {
-        background-color: #ffbd44;
-    }
-       
-    &-green {
-        background-color: #00ca4e;
-    }
-}
    
+   .gif-qrcode-card-details {
+    color: black;
+    height: 100%;
+    gap: .5em;
+    display: grid;
+    place-content: center;
+   }
+   
+   .gif-qrcode-card-button {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+    background-color: #008bf8;
+    color: #fff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+   }
+
+   &:hover {
+    border-color: #008bf8;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+   }
+   
+   &:hover .gif-qrcode-card-button {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+   }
+}

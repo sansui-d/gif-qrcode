@@ -4,6 +4,7 @@ import GIF from 'gif.js';
 import domtoimage from 'dom-to-image';
 import { worker } from '@utils/gif-worker';
 import { addImg, resetImg, setParameter, setGifUrl, setGifName, setLoading } from '@store/actions'
+import Button from '@components/Button';
 import './index.less';
 
 const Build = (props) => {
@@ -74,7 +75,7 @@ const Build = (props) => {
         initGif()
     }, [])
 
-    return <div className='gif-qrcode-content-build' onClick={handleBuild}>Build</div>
+    return <Button className='gif-qrcode-content-build' text='Build' onClick={handleBuild} />
 }
 
 export default Build;

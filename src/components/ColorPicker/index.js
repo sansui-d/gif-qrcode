@@ -21,7 +21,7 @@ function ColorPicker(props) {
         {showPicker && <div className='gif-qrcode-color-picker' ref={pickerRef}>
             <TwitterPicker color={value} onChangeComplete={(color) => { onChange && onChange(color.hex) }} />
         </div>}
-        <Button btnRef={btnRef} text={value} onClick={handleClick} />
+        <Button btnRef={btnRef} text={value} onClick={handleClick} className='gif-qrcode-color-picker-button' />
     </>;
 }
 

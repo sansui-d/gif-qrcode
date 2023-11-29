@@ -6,9 +6,40 @@
         position: absolute;
         height: 100%;
         box-sizing: border-box;
+        width: 180px;
+        text-align: center;
     }
 
     .gif-qrcode-select {
         opacity: 0;
+        height: 100%;
+        width: 180px;
+        border: 2px solid lightgrey;
+        border-radius: 12px;
+        padding: 8px;
+        max-width: 220px;
+        background-color: #fff;
+        outline: none;
+        box-shadow: 0 0 20px -18px;
+        transition: all .3s cubic-bezier(.19, 1, .22, 1);
+    }
+      
+    &:hover {
+        .gif-qrcode-label {
+            border: 2px solid #000;
+            box-shadow: 0 0 20px -17px;
+        }
+    }
+      
+    &:active {
+        .gif-qrcode-label {
+            transform: scale(.90);
+        }
+    }
+      
+    &:focus {
+        .gif-qrcode-label {
+            border: 2px solid #000;
+        }
     }
 }
