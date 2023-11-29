@@ -38,6 +38,7 @@ const Build = (props) => {
                 dispatch(setGifUrl(gif))
                 dispatch(setLoading(0))
             });
+            console.log(gif.current, 'gif.current')
             gif.current?.render();
         } catch (err) {
             console.log(err);

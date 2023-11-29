@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'
+import Button from '@components/Button'
 import './index.less';
 
 const Download = (props) => {
@@ -16,7 +17,7 @@ const Download = (props) => {
 
     return <div className='gif-qrcode-content-download'>
         <img className='gif-qrcode-content-download-img' src={gifUrl} />
-        <div className='gif-qrcode-content-download-button' onClick={handleDownload}>Download</div>
+        <Button className='gif-qrcode-content-download-button' onClick={handleDownload} text='Download' />
     </div>
 }
 
