@@ -1,5 +1,6 @@
 import { ADDIMG, RESETIMG, SETPARAMETER, SETGIFURL, SETGIFNAME, SETLOADING } from '../types/index'
 import { iconSource } from '@constants'
+import gif2 from '@assets/gif2.gif'
 
 const rootState = {
     imgs: [],
@@ -17,7 +18,7 @@ const rootState = {
         posType: 'rect',
         posColor: '#000000'
     },
-    gifUrl: '',
+    gifUrl: gif2,
     gifName: 'gif',
     loading: 0 // 0: done, 1: gif split, 2: gif merge
 }
