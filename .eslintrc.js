@@ -21,6 +21,7 @@ module.exports = {
     },
     plugins: ['react'],
     rules: {
+        'no-useless-escape': 0,
         'no-self-assign': 0,
         'no-prototype-builtins': 0,
         'no-constant-condition': 0,
