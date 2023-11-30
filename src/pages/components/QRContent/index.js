@@ -11,7 +11,7 @@ function QRContent(props) {
     const gifUrl = useSelector((state) => state.gifUrl);
     const loading = useSelector((state) => state.loading);
     const [qr, setQr] = useState('');
-    const [val, setVal] = useState('sansui-d.github.io/gif-qrcode');
+    const [val, setVal] = useState('https://sansui-d.github.io/gif-qrcode');
 
     useEffect(() => {
         const svg = document.getElementById('gif-qrcode-content-sketch');
@@ -45,7 +45,7 @@ function QRContent(props) {
             <Input
                 value={val}
                 onChange={setVal}
-                placeholder="sansui-d.github.io/gif-qrcode"
+                placeholder="please enter"
                 className="gif-qrcode-content-qrcontent-input"
             />
         </div>

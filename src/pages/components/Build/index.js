@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import GIF from 'gif.js';
-import domtoimage from 'dom-to-image';
+import domtoimage from '@utils/dom-to-image';
 import { worker } from '@utils/gif-worker';
 import { addImg, resetImg, setParameter, setGifUrl, setGifName, setLoading } from '@store/actions'
 import Button from '@components/Button';
@@ -16,7 +16,7 @@ const Build = (props) => {
     const initGif = () => {
         gif.current = new GIF({
             workers: 2,
-            quality: 10,
+            quality: 1,
             workerScript: worker
         });
     };
@@ -38,7 +38,6 @@ const Build = (props) => {
                 dispatch(setGifUrl(gif))
                 dispatch(setLoading(0))
             });
-            console.log(gif.current, 'gif.current')
             gif.current?.render();
         } catch (err) {
             console.log(err);
@@ -57,7 +56,7 @@ const Build = (props) => {
 
     const imgRender = () => {
         const svg = document.getElementById('gif-qrcode-content-sketch');
-        domtoimage.toSvg(svg, { bgcolor: '#fff' })
+        domtoimage.toSvg(svg, { bgcolor: '#fff', scale: 100})
             .then(function (dataUrl) {
                 let img = document.createElement('img');
                 img.src = dataUrl

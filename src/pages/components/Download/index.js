@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import Button from '@components/Button'
+import Loading from '@components/Loading'
 import './index.less';
 
 const Download = (props) => {
@@ -16,7 +17,7 @@ const Download = (props) => {
     };
 
     return <div className='gif-qrcode-content-download'>
-        <img className='gif-qrcode-content-download-img' src={gifUrl} />
+        {loading === 2 ? <Loading text={'gif in progress...'} /> : <img className='gif-qrcode-content-download-img' src={gifUrl} /> }
         <Button className='gif-qrcode-content-download-button' onClick={handleDownload} text='Download' />
     </div>
 }

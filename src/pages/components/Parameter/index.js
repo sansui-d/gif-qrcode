@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useTransition } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { setParameter } from '@store/actions'
 import { parameterList, COMPONENT_BY_NAME } from '@constants';
@@ -15,7 +15,7 @@ const Parameter = (props) => {
             return (<div className='gif-qrcode-parameter-item' key={item.props.value} >
                 <div className='gif-qrcode-parameter-label'>{item.label}</div>
                 <div className='gif-qrcode-parameter-value'>
-                    <Component {...item.props} value={parameter[item.props.value]} onChange={(value) => { dispatch(setParameter(item.props.value, value)) }} />
+                    <Component {...item.props} value={parameter[item.props.value]} onChange={(value) => {  dispatch(setParameter(item.props.value, value))  }} />
                 </div>
             </div>)
         })}

@@ -50,17 +50,12 @@ export const parameterList = [
     },
     {
         label: 'Icon Source', props: {
-            value: 'icon', id: 'icon-source', label: 'upload'
+            value: 'icon', id: 'icon-source', label: 'Upload'
         }
     },
     {
         label: 'Icon Zoom', props: {
             value: 'iconScale', type: 'number'
-        }
-    },
-    {
-        label: 'Background', props: {
-            value: 'image', id: 'background', label: 'upload'
         }
     },
     {
