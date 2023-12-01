@@ -25,22 +25,24 @@ const Build = () => {
         gif.current?.abort();
         gif.current.frames = [];
         dispatch(setLoading(2))
+        console.log('GIF二维码合成中...')
         for (let img of imgs) {
             dispatch(setParameter('image', img))
             await makeQRCodePromise()
         }
         try {
             gif.current.on('progress', function (progress) {
-                console.log(progress)
+                console.log('GIF二维码合成进度:', progress)
             });
             gif.current.on('finished', function (blob) {
                 const gif = URL.createObjectURL(blob);
                 dispatch(setGifUrl(gif))
                 dispatch(setLoading(0))
+                console.log('GIF二维码合成成功')
             });
             gif.current?.render();
         } catch (err) {
-            console.log(err);
+            console.error('oops, something went wrong!', err);
             dispatch(setLoading(0))
         }
     }

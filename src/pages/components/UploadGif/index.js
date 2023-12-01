@@ -24,7 +24,7 @@ const Upload = () => {
                 const superGif = new SuperGif({ gif: docImg });
                 superGif.onError(function (e) {
                     reject()
-                    console.log(e);
+                    console.error('oops, something went wrong!', e);
                 });
                 superGif.load(function () {
                     dispatch(resetImg());
@@ -48,7 +48,11 @@ const Upload = () => {
             reader.onload = function (e) {
                 dispatch(setLoading(1));
                 setImg(e.target.result);
-                loadImg(e.target.result).finally(() => { dispatch(setLoading(0)) })
+                console.log('GIF解析中...')
+                loadImg(e.target.result).finally(() => {
+                    dispatch(setLoading(0))
+                    console.log('GIF解析完成')
+                })
             };
         }
     };
