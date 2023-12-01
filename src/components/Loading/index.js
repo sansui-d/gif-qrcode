@@ -2,7 +2,7 @@ import React from 'react';
 import './index.less';
 
 function Loading(props) {
-    const {text} = props
+    const { text } = props
     return (
         <div aria-label="Loading..." role="status" className="gif-qrcode-loading">
             <svg className="icon" viewBox="0 0 256 256">

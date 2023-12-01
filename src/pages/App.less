@@ -1,8 +1,8 @@
 .gif-qrcode {
     display: flex;
+    overflow: hidden;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
 
     &-drawer {
         display: flex;
@@ -27,10 +27,6 @@
         &-top {
             display: flex;
 
-            &-left {
-
-            }
-
             &-right {
                 margin-left: 50px;
             }
@@ -51,17 +47,17 @@
         box-shadow: 0 0 20px -18px;
         transition: all .3s cubic-bezier(.19, 1, .22, 1);
     }
-      
+
     &-label:hover {
-        border: 2px solid #000;
+        border: 2px solid #008bf8;
         box-shadow: 0 0 20px -17px;
     }
-      
+
     &-label:active {
         transform: scale(.90);
     }
-      
+
     &-label:focus {
-        border: 2px solid #000;
+        border: 2px solid #008bf8;
     }
 }

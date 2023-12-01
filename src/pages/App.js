@@ -1,3 +1,4 @@
+import React from 'react';
 import Card from '@components/Card'
 import Download from './components/Download';
 import UploadGif from './components/UploadGif';

@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import GIF from 'gif.js';
 import domtoimage from '@utils/dom-to-image';
 import { worker } from '@utils/gif-worker';
-import { addImg, resetImg, setParameter, setGifUrl, setGifName, setLoading } from '@store/actions'
+import { setParameter, setGifUrl, setLoading } from '@store/actions'
 import Button from '@components/Button';
 import './index.less';
 
-const Build = (props) => {
+const Build = () => {
     const dispatch = useDispatch();
     const imgs = useSelector(state => state.imgs)
     const gif = useRef(null);
@@ -46,7 +46,7 @@ const Build = (props) => {
     }
 
     const makeQRCodePromise = () => {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             timeout.current = setTimeout((() => {
                 imgRender()
                 resolve()
@@ -56,7 +56,7 @@ const Build = (props) => {
 
     const imgRender = () => {
         const svg = document.getElementById('gif-qrcode-content-sketch');
-        domtoimage.toSvg(svg, { bgcolor: '#fff', scale: 100})
+        domtoimage.toSvg(svg, { bgcolor: '#fff', scale: 100 })
             .then(function (dataUrl) {
                 let img = document.createElement('img');
                 img.src = dataUrl

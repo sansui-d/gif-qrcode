@@ -1,10 +1,10 @@
-import React, { useCallback, useEffect, useTransition } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { setParameter } from '@store/actions'
 import { parameterList, COMPONENT_BY_NAME } from '@constants';
 import './index.less';
 
-const Parameter = (props) => {
+const Parameter = () => {
     const dispatch = useDispatch();
     const parameter = useSelector(state => state.parameter)
 
@@ -15,7 +15,7 @@ const Parameter = (props) => {
             return (<div className='gif-qrcode-parameter-item' key={item.props.value} >
                 <div className='gif-qrcode-parameter-label'>{item.label}</div>
                 <div className='gif-qrcode-parameter-value'>
-                    <Component {...item.props} value={parameter[item.props.value]} onChange={(value) => {  dispatch(setParameter(item.props.value, value))  }} />
+                    <Component {...item.props} value={parameter[item.props.value]} onChange={(value) => { dispatch(setParameter(item.props.value, value)) }} />
                 </div>
             </div>)
         })}

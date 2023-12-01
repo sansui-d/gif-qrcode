@@ -1,4 +1,4 @@
-import { ADDIMG, RESETIMG, SETPARAMETER, SETGIFURL, SETGIFNAME, SETLOADING, SETQR } from '../types/index';
+import { ADDIMG, RESETIMG, SETPARAMETER, SETGIFURL, SETGIFNAME, SETLOADING } from '../types/index';
 
 export function addImg(img) {
     return {

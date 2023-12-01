@@ -1,13 +1,8 @@
-import { useEffect, useImperativeHandle, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import GIF from 'gif.js';
-import domtoimage from 'dom-to-image';
-import { worker } from '@utils/gif-worker';
 import {
     addImg,
     resetImg,
-    setParameter,
-    setGifUrl,
     setGifName,
     setLoading
 } from '@store/actions';
@@ -16,12 +11,9 @@ import Loading from '@components/Loading';
 import gif1 from '@assets/gif1.gif'
 import './index.less';
 
-const Upload = (props) => {
-    const { uploadRef } = props;
+const Upload = () => {
     const dispatch = useDispatch();
     const loading = useSelector((state) => state.loading);
-    const gif = useRef(null);
-    const timeout = useRef(null);
     const [img, setImg] = useState(() => gif1);
 
     const loadImg = (img) => {
@@ -40,9 +32,7 @@ const Upload = (props) => {
                         superGif.move_to(i);
                         const sImg = superGif.get_canvas().toDataURL('image/png');
                         dispatch(addImg(sImg));
-                        console.log(1)
                     }
-                    console.log(2)
                     resolve()
                 });
             };
@@ -58,7 +48,7 @@ const Upload = (props) => {
             reader.onload = function (e) {
                 dispatch(setLoading(1));
                 setImg(e.target.result);
-                loadImg(e.target.result).finally(()=>{ dispatch(setLoading(0)) })
+                loadImg(e.target.result).finally(() => { dispatch(setLoading(0)) })
             };
         }
     };

@@ -37,7 +37,7 @@ module.exports = {
             }
         ], // 强制4格风格
         'import/no-unresolved': 'off',
-        'react/jsx-uses-react': 'off', // 屏蔽'React' is defined but never used错误
+        // 'react/jsx-uses-react': 'off', // 屏蔽'React' is defined but never used错误
         'import/order': 'off', // 不需要引入顺序验证
         'comma-dangle': ['error', 'never'], // 不允许最后多余的逗号
         'react-hooks/exhaustive-deps': 'off', // 检查effect的依赖

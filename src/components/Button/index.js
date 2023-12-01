@@ -1,3 +1,4 @@
+import React from 'react';
 import './index.less';
 
 function Button(props) {
@@ -5,7 +6,8 @@ function Button(props) {
     return (
         <button ref={btnRef} className={`gif-qrcode-button ${className}`} onClick={onClick}>
             {text}
-        </button>)
+        </button>
+    )
 }
 
 export default Button

@@ -1,10 +1,9 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useSelector } from 'react-redux'
 import Button from '@components/Button'
 import Loading from '@components/Loading'
 import './index.less';
 
-const Download = (props) => {
+const Download = () => {
     const gifUrl = useSelector(state => state.gifUrl)
     const gifName = useSelector(state => state.gifName)
     const loading = useSelector(state => state.loading)
@@ -17,7 +16,7 @@ const Download = (props) => {
     };
 
     return <div className='gif-qrcode-content-download'>
-        {loading === 2 ? <Loading text={'gif in progress...'} /> : <img className='gif-qrcode-content-download-img' src={gifUrl} /> }
+        {loading === 2 ? <Loading text={'gif in progress...'} /> : <img className='gif-qrcode-content-download-img' src={gifUrl} />}
         <Button className='gif-qrcode-content-download-button' onClick={handleDownload} text='Download' />
     </div>
 }
