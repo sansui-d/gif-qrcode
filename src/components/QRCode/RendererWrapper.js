@@ -25,7 +25,7 @@ export function drawIcon({ qrcode, title, titleSize, titleColor, titleAlign, ico
     const iconSize = Number(nCount * iconScale);
     const iconXY = (nCount - iconSize) / 2;
     const pointList = [];
-    if (icon || titleVerticalAlign === 'middle') {
+    if (icon !== '') {
         pointList.push(<rect key={1} width={iconSize} height={iconSize} rx="2" ry="2" fill="#FFFFFF" x={iconXY} y={iconXY} />);
     }
 
