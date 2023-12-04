@@ -19,7 +19,7 @@ const rootState = {
         posColor: '#000000'
     },
     gifUrl: gif2,
-    gifName: 'gif',
+    gifName: 'gif-qrcode',
     loading: 0 // 0: done, 1: gif split, 2: gif merge
 }
 export default function reducers(state = rootState, actions) {

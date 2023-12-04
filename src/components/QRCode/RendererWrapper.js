@@ -4,7 +4,7 @@ import { encodeData } from '@utils/qrcodeHandler';
 export const RendererWrapper = (renderer) => {
     const Renderer = (props) => {
         let newProps = Object.assign({}, props);
-        newProps.value = newProps.value || 'https://sansui-d.github.io/QRCode';
+        newProps.value = newProps.value || 'https://sansui-d.github.io/gif-qrcode';
         newProps.qrcode = newProps.qrcode || encodeData({ text: newProps.value, correctLevel: newProps.level, typeNumber: -1 });
         newProps.styles = { ...renderer.defaultCSS, ...props.styles };
 
@@ -29,11 +29,11 @@ export function drawIcon({ qrcode, title, titleSize, titleColor, titleAlign, ico
         pointList.push(<rect key={1} width={iconSize} height={iconSize} rx="2" ry="2" fill="#FFFFFF" x={iconXY} y={iconXY} />);
     }
 
-    if (icon) {
+    if (icon !== 'none') {
         pointList.push(<image key={2} xlinkHref={icon} width={iconSize - 2} x={iconXY + 1} y={iconXY + 1} />);
     }
 
-    if (title) {
+    if (icon === 'text' && title) {
         const svgWidth = styles.svg && styles.svg.width ? styles.svg.width.replace('px', '') : 300;
         const titleFontSize = Number(nCount + nCount / 5 * 2) * (titleSize || fontSize || 12) / svgWidth;
         const titleFontColor = titleColor || color || '#000000';
