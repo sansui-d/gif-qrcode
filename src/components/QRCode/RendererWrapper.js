@@ -29,7 +29,7 @@ export function drawIcon({ qrcode, title, titleSize, titleColor, titleAlign, ico
         pointList.push(<rect key={1} width={iconSize} height={iconSize} rx="2" ry="2" fill="#FFFFFF" x={iconXY} y={iconXY} />);
     }
 
-    if (icon !== 'none') {
+    if (icon && icon !== 'none' && icon !== 'text') {
         pointList.push(<image key={2} xlinkHref={icon} width={iconSize - 2} x={iconXY + 1} y={iconXY + 1} />);
     }
 
