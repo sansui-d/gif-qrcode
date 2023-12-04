@@ -38,9 +38,7 @@ export function drawIcon({ qrcode, title, titleSize, titleColor, titleAlign, ico
         const titleFontSize = Number(nCount + nCount / 5 * 2) * (titleSize || fontSize || 12) / svgWidth;
         const titleFontColor = titleColor || color || '#000000';
 
-        const fontY = titleVerticalAlign === 'middle'
-            ? (icon ? (iconXY + iconSize) : (nCount / 2 + titleFontSize * .5))
-            : Number(nCount + nCount / 5) - titleFontSize * .5;
+        const fontY = (nCount / 2 + titleFontSize * .5)
 
         pointList.push(<text key={3} x={nCount / 2} y={fontY} fill={titleFontColor} style={{ ...titleStyle, fontSize: titleFontSize }} textAnchor="middle">{title}</text>)
     }

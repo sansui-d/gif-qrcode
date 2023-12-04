@@ -9,10 +9,11 @@ import vxPay from '@assets/vx-pay.svg'
 export const iconSource = {
     '0': '',
     '1': 'none',
-    '2': vxSmall,
-    '3': vx,
-    '4': vxPay,
-    '5': alipay
+    '2': 'text',
+    '3': vxSmall,
+    '4': vx,
+    '5': vxPay,
+    '6': alipay
 }
 export const levelOption = [
     { value: 'L', text: '7%', key: 'level0' },
@@ -23,10 +24,11 @@ export const levelOption = [
 export const iconTypeOption = [
     { value: '0', text: 'None', key: 'icon0' },
     { value: '1', text: 'Custom', key: 'icon1' },
-    { value: '2', text: 'WeChat-Small', key: 'icon2' },
-    { value: '3', text: 'WeChat', key: 'icon3' },
-    { value: '4', text: 'WeChat-Pay', key: 'icon4' },
-    { value: '5', text: 'Ali-Pay', key: 'icon5' }
+    { value: '2', text: 'Text', key: 'icon2' },
+    { value: '3', text: 'WeChat-Small', key: 'icon3' },
+    { value: '4', text: 'WeChat', key: 'icon4' },
+    { value: '5', text: 'WeChat-Pay', key: 'icon5' },
+    { value: '6', text: 'Ali-Pay', key: 'icon6' }
 ]
 export const typeOption = [
     { value: 'rect', text: 'Rectangle', key: 'type0' },
@@ -56,6 +58,21 @@ export const parameterList = [
     {
         label: 'Icon Zoom', props: {
             value: 'iconScale', type: 'number'
+        }
+    },
+    {
+        label: 'Text Value', props: {
+            value: 'title'
+        }
+    },
+    {
+        label: 'Text Color', props: {
+            value: 'titleColor'
+        }
+    },
+    {
+        label: 'Font Size', props: {
+            value: 'titleSize', type: 'number'
         }
     },
     {
@@ -99,6 +116,9 @@ export const COMPONENT_BY_NAME = {
     'Icon Type': Select,
     'Icon Source': Upload,
     'Icon Zoom': Input,
+    'Text Value': Input,
+    'Text Color': ColorPicker,
+    'Font Size':Input,
     'Background': Upload,
     'Information Style': Select,
     'Information Zoom': Input,
